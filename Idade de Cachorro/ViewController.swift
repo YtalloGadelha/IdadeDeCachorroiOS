@@ -15,16 +15,25 @@ class ViewController: UIViewController {
     
     @IBAction func descobrirIdade(_ sender: Any) {
         
-        let idade = Int(campoIdadeCachorro.text!)! * 7
+        if let idade = Int(campoIdadeCachorro.text ?? "0.0") {
             
-        campoIdadeCachorro.text = ""
-        legendaResultado.text = "A idade do cachorro é: " + String(idade)
+            let idadeCachorro = idade * 7
+            
+            campoIdadeCachorro.text = ""
+            legendaResultado.text = "A idade do cachorro é: " + String(idadeCachorro)
+            
+        }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        campoIdadeCachorro.layer.cornerRadius = 10
+        campoIdadeCachorro.layer.masksToBounds = true
+        legendaResultado.layer.cornerRadius = 10
+        legendaResultado.layer.masksToBounds = true
+        
     }
 
 
