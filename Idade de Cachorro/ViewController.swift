@@ -13,6 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var legendaResultado: UILabel!
     @IBOutlet weak var campoIdadeCachorro: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        campoIdadeCachorro.layer.cornerRadius = 10
+        campoIdadeCachorro.layer.masksToBounds = true
+        legendaResultado.layer.cornerRadius = 10
+        legendaResultado.layer.masksToBounds = true
+        
+    }
+
     @IBAction func descobrirIdade(_ sender: Any) {
         
         if let idade = Int(campoIdadeCachorro.text ?? "0.0") {
@@ -26,15 +36,4 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        campoIdadeCachorro.layer.cornerRadius = 10
-        campoIdadeCachorro.layer.masksToBounds = true
-        legendaResultado.layer.cornerRadius = 10
-        legendaResultado.layer.masksToBounds = true
-        
-    }
-
-
 }
