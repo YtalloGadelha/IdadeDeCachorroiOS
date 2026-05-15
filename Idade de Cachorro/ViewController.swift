@@ -15,12 +15,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configLayout()
         
+    }
+    
+    func configLayout() {
         campoIdadeCachorro.layer.cornerRadius = 10
         campoIdadeCachorro.layer.masksToBounds = true
         legendaResultado.layer.cornerRadius = 10
         legendaResultado.layer.masksToBounds = true
-        
     }
 
     @IBAction func descobrirIdade(_ sender: Any) {
@@ -30,7 +33,7 @@ class ViewController: UIViewController {
             let idadeCachorro = idade * 7
             
             campoIdadeCachorro.text = ""
-            legendaResultado.text = "A idade do cachorro é: " + String(idadeCachorro)
+            legendaResultado.text = " A idade do cachorro em anos humanos é: " + String(idadeCachorro)
             
         }
         
